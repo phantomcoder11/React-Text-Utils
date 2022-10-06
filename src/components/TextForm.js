@@ -14,17 +14,22 @@ export default function TextForm(props) {
         //console.log("onChange");
         setText(event.target.value);
     }
+    const copyText = ()=>{
+      var text = document.getElementById("myBox");
+      text.select();
+      navigator.clipboard.writeText(text.value);
+    }
   return (
     <>
     <div className="container">
      
       <div className="mb-3">
         <label htmlFor="exampleFormControlTextarea1" className="form-label">
-          {props.title}
+         <h1>{props.title}</h1> 
         </label>
         <textarea
           className="form-control"
-          id="exampleFormControlTextarea1"
+          id="myBox"
           value={text}
           rows="8"
           onChange={handleOnChange}
@@ -32,6 +37,7 @@ export default function TextForm(props) {
       </div>
      <button className="btn btn-primary mx-1" onClick={changeUpperCase} >Convert to Upper Case</button>
      <button className="btn btn-primary mx-1" onClick={changeLowerCase} >Convert to Lower Case</button>
+     <button className="btn btn-primary mx-1" onClick={copyText} >Copy Text</button>
     </div>
     <div className="container" class="my-4">
         <h1>Your Text Summary</h1>

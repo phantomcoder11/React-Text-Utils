@@ -1,7 +1,7 @@
 import './App.css';
 import About from './components/About';
 import Navbar from './components/Navbar';
-// import TextForm from './components/TextForm';
+import TextForm from './components/TextForm';
 function App() {
   return (
     <>
@@ -9,7 +9,7 @@ function App() {
     <Navbar title="Heyaaa"/>
     <div className='container'>
       <About/>
-    {/* <TextForm title="Enter your text"/> */}
+    <TextForm title="Enter your text"/>
     </div>
    
     </>
