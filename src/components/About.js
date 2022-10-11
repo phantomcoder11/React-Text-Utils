@@ -1,28 +1,7 @@
-import React,{useState} from "react";
+import React from "react";
 
 export default function About(props) {
 
-//   const [myStyle,setStyle]=useState({
-//     color:'black',
-//     backgroundColor: 'white'
-//   })
-//   const [text,setText] = useState('Enable Dark Mode');
-//  const toggleColor = () =>{
-//     if(props.mode==='dark'){
-//         setStyle({
-//             color:'white',
-//             backgroundColor: 'black'
-//         })
-//         setText('Enable Light Mode')
-//     }else{
-//         setStyle({
-//             color:'black',
-//             backgroundColor: 'white'
-//         })
-//         setText('Enable Dark Mode')
-//     }
-    
-//  }
   return (
     <div className="container" style={{backgroundColor: props.mode==='dark'?'#151a45':'white',color: props.mode==='light'?'black':'white'}} >
       <h1 className="my-3">About Us</h1>
