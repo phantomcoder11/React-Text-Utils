@@ -1,32 +1,33 @@
 import React,{useState} from "react";
 
-export default function About() {
-  const [myStyle,setStyle]=useState({
-    color:'black',
-    backgroundColor: 'white'
-  })
-  const [text,setText] = useState('Enable Dark Mode');
- const toggleColor = () =>{
-    if(myStyle.color==='black'){
-        setStyle({
-            color:'white',
-            backgroundColor: 'black'
-        })
-        setText('Enable Light Mode')
-    }else{
-        setStyle({
-            color:'black',
-            backgroundColor: 'white'
-        })
-        setText('Enable Dark Mode')
-    }
+export default function About(props) {
+
+//   const [myStyle,setStyle]=useState({
+//     color:'black',
+//     backgroundColor: 'white'
+//   })
+//   const [text,setText] = useState('Enable Dark Mode');
+//  const toggleColor = () =>{
+//     if(props.mode==='dark'){
+//         setStyle({
+//             color:'white',
+//             backgroundColor: 'black'
+//         })
+//         setText('Enable Light Mode')
+//     }else{
+//         setStyle({
+//             color:'black',
+//             backgroundColor: 'white'
+//         })
+//         setText('Enable Dark Mode')
+//     }
     
- }
+//  }
   return (
-    <div className="container" style={myStyle}>
+    <div className="container" style={{backgroundColor: props.mode==='dark'?'#151a45':'white',color: props.mode==='light'?'black':'white'}} >
       <h1 className="my-3">About Us</h1>
       <div className="accordion my-5" id="accordionExample" >
-       <div class="accordion-item" style={myStyle}>
+       <div class="accordion-item" style={{backgroundColor: props.mode==='dark'?'#151a45':'white',color: props.mode==='light'?'black':'white'}}>
           <h2 class="accordion-header" id="headingOne">
             <button
               class="accordion-button"
@@ -35,7 +36,7 @@ export default function About() {
               data-bs-target="#collapseOne"
               aria-expanded="true"
               aria-controls="collapseOne"
-              style={myStyle}
+              style={{backgroundColor: props.mode==='dark'?'#151a45':'white',color: props.mode==='light'?'black':'white'}}
             >
               Accordion Item #1
             </button>
@@ -58,7 +59,7 @@ export default function About() {
             </div>
           </div>
         </div>
-       <div class="accordion-item" style={myStyle}>
+       <div class="accordion-item" style={{backgroundColor: props.mode==='dark'?'#151a45':'white',color: props.mode==='light'?'black':'white'}}>
           <h2 class="accordion-header" id="headingTwo">
             <button
               class="accordion-button collapsed"
@@ -67,7 +68,7 @@ export default function About() {
               data-bs-target="#collapseTwo"
               aria-expanded="false"
               aria-controls="collapseTwo"
-              style={myStyle}
+              style={{backgroundColor: props.mode==='dark'?'#151a45':'white',color: props.mode==='light'?'black':'white'}}
             >
               Accordion Item #2
             </button>
@@ -90,7 +91,7 @@ export default function About() {
             </div>
           </div>
         </div>
-       <div class="accordion-item" style={myStyle}>
+       <div class="accordion-item" style={{backgroundColor: props.mode==='dark'?'#151a45':'white',color: props.mode==='light'?'black':'white'}}>
           <h2 class="accordion-header" id="headingThree">
             <button
               class="accordion-button collapsed"
@@ -99,7 +100,7 @@ export default function About() {
               data-bs-target="#collapseThree"
               aria-expanded="false"
               aria-controls="collapseThree"
-              style={myStyle}
+              style={{backgroundColor: props.mode==='dark'?'#151a45':'white',color: props.mode==='light'?'black':'white'}}
             >
               Accordion Item #3
             </button>
@@ -123,9 +124,9 @@ export default function About() {
           </div>
         </div>
       </div>
-      <button onClick={toggleColor} type="button" class="btn btn-primary">
+      {/* <button onClick={toggleColor} type="button" class="btn btn-primary">
         {text}
-      </button>
+      </button> */}
     </div>
   );
 }
