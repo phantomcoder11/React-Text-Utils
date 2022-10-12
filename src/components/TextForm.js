@@ -17,9 +17,8 @@ export default function TextForm(props) {
         setText(event.target.value);
     }
     const copyText = ()=>{
-      var text = document.getElementById("myBox");
-      text.select();
-      navigator.clipboard.writeText(text.value);
+     
+      navigator.clipboard.writeText(text);
       props.showAlert("Copied to Clipboard","warning")
     }
     const clearText = () =>{
@@ -48,16 +47,20 @@ export default function TextForm(props) {
           style={{backgroundColor: props.mode==='dark'?'#151a45':'white',color: props.mode==='light'?'black':'white'}}
         ></textarea>
       </div>
-     <button className="btn btn-primary mx-1" onClick={changeUpperCase} >Convert to Upper Case</button>
-     <button className="btn btn-primary mx-1" onClick={changeLowerCase} >Convert to Lower Case</button>
-     <button className="btn btn-primary mx-1" onClick={copyText} >Copy Text</button>
-     <button className="btn btn-primary mx-1" onClick={clearText} >Clear Text</button>
-     <button className="btn btn-primary mx-1" onClick={removeExtraSpace} >Remove Extra Space</button>
+     <button disabled= {text.length===0} className="btn btn-primary mx-1 my-1" onClick={changeUpperCase} >Convert to Upper Case</button>
+     <button disabled= {text.length===0} className="btn btn-primary mx-1 my-1" onClick={changeLowerCase} >Convert to Lower Case</button>
+     <button disabled= {text.length===0} className="btn btn-primary mx-1 my-1" onClick={copyText} >Copy Text</button>
+     <button disabled= {text.length===0} className="btn btn-primary mx-1 my-1" onClick={clearText} >Clear Text</button>
+     <button disabled= {text.length===0} className="btn btn-primary mx-1 my-1" onClick={removeExtraSpace} >Remove Extra Space</button>
     </div>
     <div className="container" class="my-4" style={{backgroundColor: props.mode==='dark'?'#151a45':'white',color: props.mode==='light'?'black':'white'}}>
         <h1>Your Text Summary</h1>
-        <p>Your Para has {text.split(" ").length} words and {text.length} characters</p>
-        <p>You can read the para in {0.008 * text.split(" ").length} minutes</p>
+        <p>Your Para has {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
+        <p>You can read the para in {0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} minutes</p>
+    </div>
+    <div className="container" class="my-4" style={{backgroundColor: props.mode==='dark'?'#151a45':'white',color: props.mode==='light'?'black':'white'}}>
+        <h1>Preview</h1>
+        <p>{text.length===0?'Nothing to preview':text}</p>
     </div>
     </>
   );

@@ -17,7 +17,7 @@ export default function About(props) {
               aria-controls="collapseOne"
               style={{backgroundColor: props.mode==='dark'?'#151a45':'white',color: props.mode==='light'?'black':'white'}}
             >
-              Accordion Item #1
+              Analyze Your Text
             </button>
           </h2>
           <div
@@ -27,14 +27,7 @@ export default function About(props) {
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              TextUtils is a collection of word analyzer tools, be it word counter, conversion to upper case or lowercase and many more!
             </div>
           </div>
         </div>
@@ -49,7 +42,7 @@ export default function About(props) {
               aria-controls="collapseTwo"
               style={{backgroundColor: props.mode==='dark'?'#151a45':'white',color: props.mode==='light'?'black':'white'}}
             >
-              Accordion Item #2
+              Free To Use
             </button>
           </h2>
           <div
@@ -59,14 +52,7 @@ export default function About(props) {
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              The website is totally free of cost. You need not pay 
             </div>
           </div>
         </div>
@@ -81,7 +67,7 @@ export default function About(props) {
               aria-controls="collapseThree"
               style={{backgroundColor: props.mode==='dark'?'#151a45':'white',color: props.mode==='light'?'black':'white'}}
             >
-              Accordion Item #3
+              Dark & Light Mode Available
             </button>
           </h2>
           <div
@@ -91,21 +77,12 @@ export default function About(props) {
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body">
-              <strong>This is the third item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+             The Website supports both dark and light mode and is very user friendly. The dark mode is made for low light uses to protect the eyes and provide a smooth and nice UI.
             </div>
           </div>
         </div>
       </div>
-      {/* <button onClick={toggleColor} type="button" class="btn btn-primary">
-        {text}
-      </button> */}
+
     </div>
   );
 }
